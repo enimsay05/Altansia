@@ -12009,13 +12009,14 @@ footer .social_icon li a:hover {
   font-weight:300;
   }
 
-  .section1 table td p{
+  .pSection1{
   line-height:1.4em;
+    color: #000;
   }
 
-  .section1 table td .title{
+  .titleSection1{
   color:#e50e16;
-  font-size:0.8em;
+  font-size:1.1em;
   text-transform:uppercase;
   }
 
@@ -12079,7 +12080,7 @@ footer .social_icon li a:hover {
 
   .services-item {
     display: block;
-    width: 100%;
+    width: 280px;
     margin: 20px 50px 0 0;
     float: left;
     text-align: center;
@@ -12087,7 +12088,6 @@ footer .social_icon li a:hover {
     color: #777777;
     letter-spacing: -0.025em;
   }
-
 
   .icon-commerce::before {
     background-position: -5px -5px;

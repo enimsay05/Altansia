@@ -22,6 +22,12 @@ class Actualite
     #[ORM\Column(length: 250, nullable: true)]
     private ?string $image = null;
 
+    #[ORM\Column(length: 250, nullable: true)]
+    private ?string $titre = null;
+
+    #[ORM\Column(length: 250, nullable: true)]
+    private ?string $styleImg = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +65,30 @@ class Actualite
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(?string $titre): self
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getStyleImg(): ?string
+    {
+        return $this->styleImg;
+    }
+
+    public function setStyleImg(?string $styleImg): self
+    {
+        $this->styleImg = $styleImg;
 
         return $this;
     }

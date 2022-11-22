@@ -54,73 +54,41 @@
         </section>-->
 <!-- historique-->
 <div class="section1">
-    <div class="title_header">
     <h1 style="text-align: center" class="title">Actualités</h1>
-    </div>
-    <table>
-    <tr>
-    <td><img style="width: 66%!important" src="assets/img/altansia.png"></td>
-    <td>
-    <section>
-    <i class="fa fa-heart-o"></i>
-    <h1 class="title">Altansia</h1>
-    <p>ALTANSIA S.A.S. est un cabinet de conseil en innovation spécialisé sur les technologies de convergence Web, Business Intelligence et Big Data. Elle intervient également sur vos problématiques liées à la Cyber-sécurité.</p>
-    </section>
-    </td>
-    <td><img src="assets/img/histoire.png" alt=""></td>
-    <td>
-    <section>
-    <i class="fa fa-heart-o"></i>
-    <h1 class="title">Classement altansia</h1>
-    <p>Classement des entreprises qui recrutent le plus de profils en data</p>
-    </section>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <section>
-    <i class="fa fa-heart-o"></i>
-    <h1 class="title">cynet</h1>
-    <p>Altansia est fière de compter la société Cynet parmi ses partenaires sur son offre Cyber3A. www.cynet.com</p>
-    </section>
-    </td>
-    <td><img src="assets/img/CYNET1.jpg" alt=""></td>
-    <td>
- <!--   <section>
-    <i class="fa fa-heart-o"></i>
-    <h1 class="title">Small Things</h1>
-    <p>I can't do all the good that the world needs. But the world needs all the good that i can do. Be strong enough to stand alone, smart enough to know when you need help & brave enough to ask for it.</p>
-    </section>
-    </td>
-    <td><img src="https://i.ibb.co/V3Q75JW/section1.jpg" alt=""></td>-->
-    </tr>
+
     </table>
+    <div class="services" style="margin: 50px 5%!important">
+        {% for value in data %}
+
+        {% if value.section == "actualite" %}
+        <div class="services-item" style="margin: 22px 0px 0px 55px!important">
+            <img style="width: {{ value.style }}!important" src=" {{ value.image }}">
+            <section>
+                <i class="fa fa-heart-o"></i>
+                <h1 class="titleSection1">{{ value.titre }}</h1>
+                <p class="pSection1">{{ value.text }}</p>
+            </section>
+    </div>
+        {% endif %}
+        {% endfor %}
     </div>
 
+    </div>
     <section class="page-section about-heading">
         <h4 style="text-align: center" class="title">Nos valeurs</h4>
+
         <div class="services" style="margin: 50px 0%!important">
-            <div class="services-item" style="margin: 22px 0px 0px 55px!important">
-                <img src="assets/like.png" height="100" width="auto" alt="" />
-              <h3 class="services-item-header">savoir-faire</h3>
-            </div>
+            {% for value in data %}
 
+            {% if value.section == "valeur" %}
             <div class="services-item" style="margin: 22px 0px 0px 55px!important">
-                <img src="assets/experience.png" height="100" width="auto" alt="" />
-              <h3 class="services-item-header">Expérience</h3>
+                <img src="{{ value.image }}" height="100" width="auto" alt="" />
+              <h3 class="services-item-header">{{ value.text }}</h3>
             </div>
-
-            <div class="services-item" style="margin: 22px 0px 0px 55px!important">
-                <img src="assets/growth.png" height="100" width="auto" alt="" />
-              <h3 class="services-item-header">Ambition</h3>
-            </div>
-
-            <div class="services-item" style="margin: 22px 0px 0px 55px!important">
-                <img src="assets/trust.png" height="100" width="auto" alt="" />
-              <h3 class="services-item-header">Succès</h3>
-            </div>
-
+            {% endif %}
+            {% endfor %}
           </div>
+
     </section>
         <!--partenaire-->
         <section class="page-section cta">
@@ -129,48 +97,11 @@
                 <div class="row">
                     <div class="partenaire">
                         <div class="slide-track">
+                            {% for value in partenaire %}
                             <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+                                <img src="{{ value.image }}" height="100" width="250" alt="" />
                             </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-                            </div>
-                            <div class="S-partenaire">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
