@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ActualiteRepository;
+use App\Repository\OffreRepository;
 use App\Repository\PartenaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -84,8 +85,25 @@ class IndexController extends AbstractController
      * @return Response
      */
     #[Route('/offres', name: 'offres')]
-    public function offres(): Response
+    public function offres(OffreRepository $offreRepository,PartenaireRepository $partenaireRepository): Response
     {
-        return $this->render('offres.html.twig');
+        $offres = $offreRepository->findAll();
+        $offreJobe = array();
+        foreach ($offres as $key => $offre) {
+            $offreJobe[$key] = [
+                "id" => $offre->getId(),
+                "text" => $offre->getText(),
+                "titre" => $offre->getTitre(),
+                "email" => $offre->getEmail(),
+            ];
+        }
+        $partenaires = $partenaireRepository->findAll();
+        $partenaria = array();
+        foreach ($partenaires as $key => $partenaire) {
+            $partenaria[$key] = [
+                "image" => $partenaire->getImage(),
+            ];
+        }
+        return $this->render('offres.html.twig' ,array("offre"=>$offreJobe,"partenaire"=>$partenaria));
     }
 }

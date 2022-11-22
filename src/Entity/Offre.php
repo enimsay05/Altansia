@@ -16,7 +16,7 @@ class Offre
     #[ORM\Column(length: 250)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 250)]
+    #[ORM\Column(length: 3000)]
     private ?string $text = null;
 
     #[ORM\Column(length: 250, nullable: true)]

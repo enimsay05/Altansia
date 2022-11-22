@@ -11965,50 +11965,6 @@ footer .social_icon li a:hover {
   font-weight:400;
   }
 
-  .section1 table{
-  width:90%;
-  margin:auto;
-  border-collapse:collapse;
-  }
-
-  .section1 table td{
-  width:25%;
-  background:#fff;
-  position:relative;
-  }
-
-  .section1 table td img{
-  width:100%;
-  height:100%;
-  }
-
-  .section1 table td:nth-child(odd):before{
-  position: absolute;
-  right: -25px;
-  top: 50%;
-  height: 50px;
-  width: 50px;
-  background: #fff;
-  content: "";
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-top: -25px;
-  z-index: 1;
-  }
-
-  .section1 table td i{
-  font-size:3.3em;
-  color:#000;
-  display:block;
-  }
-
-  .section1 table td section{
-  padding:10px;
-  padding-left:30px;
-  font-weight:300;
-  }
-
   .pSection1{
   line-height:1.4em;
     color: #000;
