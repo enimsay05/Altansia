@@ -6756,7 +6756,7 @@ textarea.form-control-lg {
 .d-flexy {
     display: flex!important;
     flex-direction: row;
-    width: 150%;
+    width: auto;
     justify-content: flex-start;
     margin-left: 11%;
 }
