@@ -5,59 +5,12 @@
 
 {# Ici vous mettez vos codes HTML et balises Twig au besoin #}
 {% block body %}
- <!--       <section class="page-section about-heading">
-            <table width="100%" cellpadding="0" cellspacing="0"><tr>
-                <td>&nbsp;</td>
-                <td width="90%" style="background-color:#ffffff">
-                  <BR>
-                    <div class="carousel slide responsive" style="overflow:hidden;display:none;max-height:0px;width:500px;">
 
-                      <input id="car-cbox-support" type="checkbox" checked style="display:none!important">
-                      <input name="car-radio" type=radio id="car1-radio-1" class="car-radio car-radio1" style="display:none!important">
-                      <input name="car-radio" type=radio id="car1-radio-2" class="car-radio car-radio2" style="display:none!important">
-                      <input name="car-radio" type=radio id="car1-radio-3" class="car-radio car-radio3" style="display:none!important">
-
-
-                      <div class="car-cont" style="position:relative;background-color:#ffffff;">
-                        <div class="car-frames">
-                          <a href="https://www.google.com/search?q=castles"><img class="zoom-in" src="http://freshinbox.com/examples/animated-carousel/images/car-castle.jpg" border="0"></a>
-                          <a href="https://www.google.com/search?q=meadows"><img class="zoom-out" src="http://freshinbox.com/examples/animated-carousel/images/car-meadow.jpg" border="0"></a>
-                          <a href="https://www.google.com/search?q=coast"><img class="pan-right" src="http://freshinbox.com/examples/animated-carousel/images/car-coast.jpg" border="0"></a>
-                        </div>
-                        <div class="car-controls">
-                          <label for="car1-radio-3" class="car-ltn car-nav-1"></label>
-                          <label for="car1-radio-2" class="car-rtn car-nav-1"></label>
-                          <label for="car1-radio-1" class="car-ltn car-nav-2"></label>
-                          <label for="car1-radio-3" class="car-rtn car-nav-2"></label>
-                          <label for="car1-radio-2" class="car-ltn car-nav-3"></label>
-                          <label for="car1-radio-1" class="car-rtn car-nav-3"></label>
-                        </div>
-                      </div>
-
-
-                      <div class="car-thumbnails" style="display:none;">
-                        <label for="car1-radio-1" class="car-thumb"><img src="http://freshinbox.com/examples/animated-carousel/images/car-castle.jpg"></label>
-                        <label for="car1-radio-2" class="car-thumb"><img src="http://freshinbox.com/examples/animated-carousel/images/car-meadow.jpg"></label>
-                        <label for="car1-radio-3" class="car-thumb"><img src="http://freshinbox.com/examples/animated-carousel/images/car-coast.jpg"></label>
-                      </div>
-
-                    </div>
-                    <BR><BR>
-
-                      <div class="fallback">
-                        <a href="https://www.google.com/search?q=fallback" ><img src="http://freshinbox.com/examples/animated-carousel/images/carousel-fallback.jpg" height="320" width="500" style="display:block;" border="0"></a>
-                      </div>
-
-                      </td><td>&nbsp;</td>
-                      </tr></table>
-
-        </section>-->
-<!-- historique-->
 <div class="section1">
     <h1 style="text-align: center" class="title">Actualités</h1>
 
     </table>
-    <div class="services" style="margin: 50px 5%!important">
+    <div class="services" style="margin: 50px 12%!important">
         {% for value in data %}
 
         {% if value.section == "actualite" %}
@@ -81,7 +34,7 @@
             {% for value in data %}
 
             {% if value.section == "valeur" %}
-            <div class="services-item" style="margin: 22px 0px 0px 55px!important">
+            <div class="services-item" style="margin: 22px 0px 0px 55px!important;/* width: 12%!important;*/">
                 <img src="{{ value.image }}" height="100" width="auto" alt="" />
               <h3 class="services-item-header">{{ value.text }}</h3>
             </div>

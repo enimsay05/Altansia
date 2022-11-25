@@ -18,8 +18,28 @@
         </row>
     </section>
     <section class="page-section cta" style="padding-top: 1rem!important;margin-top:1rem;!important">
-        <div class="container">
+        <row class="d-flexo">
+            {% for value in offre %}
+            {% if value.titre == "Candidature" %}
+            <img src="assets/img/altansia.png" style="width: 7%; margin-left: 46%;" alt=""/>
 
+            <div class="services-item" style="width: 100%!important;">
+
+                <b> {{ value.text }} </b>
+
+            </div>
+
+            <div class="services-item" style="width: 100%!important;">
+
+                <a href="mailto:{{value.email}}?subject={{ value.text }}">
+                    <button type="button" class="btn btn-primary btnx">Postuler</button>
+                </a>
+            </div>
+                {% endif %}
+            {% endfor %}
+        </row>
+
+        <div class="container" style="margin-top: 5%;!important;">
             <ul class="list-unstyled list-hours mb-5 text-left">
                {% for value in offre %}
                     <li class="list-unstyled-item list-hours-item d-flexi">
@@ -27,7 +47,7 @@
                         <p class="more">
                             {{ value.text|nl2br  }}
                         </p>
-                        <a href="mailto:{{value.email}}?subject={{ value.titre }}&body=l'ID de l'offre:{{ value.id }}">
+                        <a href="mailto:{{value.email}}?subject={{ value.titre }}">
                             <button type="button" class="btn btn-primary btnx">Postuler</button>
                         </a>
 
@@ -38,22 +58,7 @@
             </ul>
         </div>
 
-        <row class="d-flexo">
-            <img src="assets/img/altansia.png" style="width: 7%; margin-left: 46%;" alt=""/>
-
-            <div class="services-item" style="width: 100%!important;">
-
-                <b> Candidature spontanée </b>
-
-            </div>
-
-            <div class="services-item" style="width: 100%!important;">
-
-                <a href="mailto:yasmineharti06@gmail.com?cc=new_life05@hotmail.fr&subject=condidature spontanée&body=Details de la mission">
-                    <button type="button" class="btn btn-primary btnx">Postuler</button>
-                </a>
-            </div>
-        </row>
+        {# hna kan #}
 
     </section>
     <!--partenaire-->

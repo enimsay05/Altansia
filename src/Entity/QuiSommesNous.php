@@ -19,7 +19,7 @@ class QuiSommesNous
     #[ORM\Column(length: 250, nullable: true)]
     private ?string $image = null;
 
-    #[ORM\Column(length: 250)]
+    #[ORM\Column(length: 1000)]
     private ?string $text = null;
 
     #[ORM\Column(length: 250, nullable: true)]

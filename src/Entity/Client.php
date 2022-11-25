@@ -22,6 +22,9 @@ class Client
     #[ORM\Column(length: 250, nullable: true)]
     private ?string $text = null;
 
+    #[ORM\Column(length: 300, nullable: true)]
+    private ?string $titre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Client
     public function setText(?string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(?string $titre): self
+    {
+        $this->titre = $titre;
 
         return $this;
     }

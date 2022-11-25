@@ -1,4 +1,3 @@
-
 {% extends 'base.html.twig' %}
 
 {# Titre de la page #}
@@ -7,114 +6,53 @@
 {# Ici vous mettez vos codes HTML et balises Twig au besoin #}
 {% block body %}
 
-{#
-    <section class="page-section">
-        <div class="container">
-            <div class="product-item">
-                <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex ms-auto rounded" style="margin-left: 31%;">
-                        <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">
-                                    Apporter votre talent et votre performance pour l’entreprise et nos clients.
-                                    Tout au long de leurs missions, nos consultants fournissent leurs compétences en termes de :
-                                </span>
-                        </h2>
-                    </div>
-                </div>
-                <div class="product-item-description d-flex me-auto" style="margin-left: 31%; ">
-                    <div class="bg-faded p-5 rounded">
-                        <ul>
-                            <li>Gestion et direction de projet</li>
-                            <li>Analyse & MOA</li>
-                            <li>Expertise</li>
-                            <li>Méthodologiet</li>
-                            <li>Développement</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="page-section">
-        <div class="container">
-            <div class="product-item">
-                <div class="product-item-title d-flex"  style=" margin-right: 34%;">
-                    <div class="bg-faded p-5 d-flex ms-auto rounded">
-                        <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">
-                                    Intervenir sur des projets innovants et contribuer à leur réussite :
-                                </span>
-                        </h2>
-                    </div>
-                </div>
-                <div class="product-item-description d-flex me-auto">
-                    <div class="bg-faded p-5 rounded">
-                        <ul>
-                            <li>Analyste/Développeur</li>
-                            <li>Consultant</li>
-                            <li>Senior Consultant</li>
-                            <li>Practice Manager</li>
-                            <li>Partner</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-#}
     <section class="about" id="about">
         <div class="container">
-            <div class="heading text-center">
-                <h2>A propos de
-                    <span>Nous</span></h2>
-                <p>ALTANSIA S.A.S. est un cabinet de conseil en innovation spécialisé sur les technologies de convergence Web, Business Intelligence et Big Data. Elle intervient également sur vos problématiques liées à la Cyber-sécurité.
+            {% for value in qsn %}
+                {% if value.section == "qsn-1" %}
+                    <div class="heading text-center">
+                        <h2>{{ value.titre }}
+                            <span>{{ value.libelle }}</span></h2>
+                        <p> {{ value.text }}  </p>
+                    </div>
+                {% endif %}
+                <div class="row">
+                    {% if value.section == "qsn-2" %}
+                        <div class="col-lg-6">
+                            <img src="{{ value.image }}" alt="about" class="img-fluid" width="100%">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>{{ value.titre }} </h3>
+                            <p> {{ value.text }}</p>
 
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="https://i.ibb.co/qpz1hvM/About-us.jpg" alt="about" class="img-fluid" width="100%">
+                        </div>
+                    {% endif %}
                 </div>
-                <div class="col-lg-6">
-                    <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
-
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
-  <section class="sectionAbout">
-        <div class="person">
-            <div class="containerss">
-                <div class="container-inner" style="width: 100%!important;">
-                    <img
-                        class="circle"
-                        src="assets/img/bill-gates.jpg"
-                    />
+    <section class="sectionAbout">
 
+        {% for value in qsn %}
+            {% if value.section == "CEO" %}
+                <div class="person">
+                    <div class="containerss">
+
+                        <div class="container-inner" style="width: 100%!important;">
+                            <img
+                                    class="circle"
+                                    src="{{ value.image }}"
+                            />
+
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="name">{{ value.titre }}</div>
+                    <div class="titles">{{ value.libelle }}</div>
                 </div>
-            </div>
-            <div class="divider"></div>
-            <div class="name">Yvan petton</div>
-            <div class="titles">CEO</div>
-        </div>
-
-        <div class="person">
-            <div class="containerss">
-                <div class="container-inner" style="width: 100%!important;">
-                    <img  class="circle"  src="assets/img/macron.jpg"/>
-
-                </div>
-            </div>
-            <div class="divider"></div>
-            <div class="name">David Hattab</div>
-            <div class="titles">Product Manager</div>
-        </div>
-
-     {#    <div class="person">
+            {% endif %}
+        {% endfor %}
+        {#    <div class="person">
             <div class="containerss">
                 <div class="container-inner-QSN">
                     <img  class="circle" src="assets/img/marc.jpg"  />
@@ -136,35 +74,23 @@
             <div class="divider"></div>
             <div class="name">Nour Hached </div>
             <div class="titles">conseillère commerciale</div>
-        </div>#}
+        </div> #}
 
     </section>
     <section class="temoignages">
         <h4 style="text-align: center" class="title">Témoignages:</h4>
         <div class="avis">
             <ul class="grid-testimonials">
-
-                <li>
-                    <div><p>
-                            &ldquo; J’ai été séduit par la société ALTANSIA,
-                            de par son positionnement innovant me permettant de
-                            réaliser des missions enrichissantes mais aussi d’apporter
-                            mes compétences pour les projets internes de R&D,
-                            sur les technologies mobiles et de sécurité des données .
-                            &rdquo;</p>
-                        <span class="quote-arrow"></span></div>
-                    <span class="grid-testimonials-citation">Y.G., Chef de Projet Mobilité.</span>
-                </li>
-
-                <li>
-                    <div ><p>
-                            &ldquo;Altansia a su apporter son expertise en matière de modélisation,
-                            nous permettant ainsi de construire un premier socle applicatif solide,
-                            évolutif et répondant parfaitement aux besoins de nos clients internes &rdquo;
-                        </p>
-                        <span class="quote-arrow"></span></div>
-                    <span class="grid-testimonials-citation">X.D., Direction innovation.</span>
-                </li>
+                {% for value in qsn %}
+                    {% if value.section == "temoignage" %}
+                        <li>
+                            <div><p>
+                                    {{ value.text }}</p>
+                                <span class="quote-arrow"></span></div>
+                            <span class="grid-testimonials-citation">{{ value.titre }}</span>
+                        </li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </div>
     </section>

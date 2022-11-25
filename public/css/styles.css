@@ -6743,7 +6743,8 @@ textarea.form-control-lg {
 .d-flexo {
     display: flex!important;
     flex-direction: column;
-    margin-left: 20%;
+    margin-left: 0%;
+    margin-top : -9%;
 }
 .d-flexi {
     display: flex!important;
@@ -11340,7 +11341,7 @@ p {
 }
 
 .page-section {
-  margin-top: 5rem;
+  margin-top: -3rem;
   margin-bottom: 5rem;
 }
 
@@ -12268,7 +12269,7 @@ footer .social_icon li a:hover {
     font-size: 15px;
     font-weight: 400;
     line-height: 1.7;
-    color: #999999;
+    color: #000;
     margin: 20px 0 60px;
     padding: 0;
 }
@@ -12284,7 +12285,7 @@ footer .social_icon li a:hover {
     font-size: 15px;
     font-weight: 400;
     line-height: 1.7;
-    color: #999999;
+    color: #000;
     margin: 20px 0 15px;
     padding: 0;
 }
@@ -12305,7 +12306,7 @@ footer .social_icon li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 100vh;
+    height: 85vh;
     margin: 0;
 }
 .person {
@@ -12378,6 +12379,7 @@ footer .social_icon li a:hover {
     display: flex;
     flex-direction: column;
     display: block;
+  margin-top: 8%;
 }
 /*postuler*/
 .btnx{
