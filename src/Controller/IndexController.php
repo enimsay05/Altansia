@@ -36,6 +36,7 @@ class IndexController extends AbstractController
                 "path" => $base->getPath(),
             ];
         }
+        $baseArray[0]["date"]= date("Y");
         return $baseArray;
     }
 
