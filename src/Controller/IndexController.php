@@ -46,7 +46,7 @@ class IndexController extends AbstractController
      * @Route("/", name="actualites")
      * @return Response
      */
-    public function index(ActualiteRepository $actualiteRepository,PartenaireRepository $partenaireRepository): Response
+    public function index(ActualiteRepository $actualiteRepository,PartenaireRepository $partenaireRepository,BaseRepository $baseRepository): Response
     {
         /* return $this->json([
              'message' => 'Welcome to your new controller!',
