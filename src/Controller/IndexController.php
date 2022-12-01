@@ -22,8 +22,8 @@ class IndexController extends AbstractController
     /**
      * @param array $baseRepository
      * @return array
+     * @Route("/base", name="base")
      */
-    #[Route('/base', name: 'base')]
     public function base(array $baseRepository): array
     {
         $baseArray = array();
@@ -43,9 +43,9 @@ class IndexController extends AbstractController
     /**
      * @param ActualiteRepository $actualiteRepository
      * @param PartenaireRepository $partenaireRepository
+     * @Route("/", name="actualites")
      * @return Response
      */
-    #[Route('/', name: 'actualites')]
     public function index(ActualiteRepository $actualiteRepository,PartenaireRepository $partenaireRepository): Response
     {
         /* return $this->json([
@@ -78,9 +78,10 @@ class IndexController extends AbstractController
 
     /**
      * @param QuiSommesNousRepository $quiSommesNousRepository
+     * @param BaseRepository $baseRepository
      * @return Response
+     * @Route("/quiSommesNous", name="consultants")
      */
-    #[Route('/quiSommesNous', name: 'consultants')]
     public function consultants(QuiSommesNousRepository $quiSommesNousRepository,BaseRepository $baseRepository): Response
     {
         $qsnSections = $quiSommesNousRepository->findAll();
@@ -102,8 +103,8 @@ class IndexController extends AbstractController
     /**
      * @param ClientRepository $clientRepository
      * @return Response
+     *  @Route("/clients", name="clients")
      */
-    #[Route('/clients', name: 'clients')]
     public function clients(ClientRepository $clientRepository): Response
     {
         $clients = $clientRepository->findAll();
@@ -134,9 +135,10 @@ class IndexController extends AbstractController
     /**
      * @param OffreRepository $offreRepository
      * @param PartenaireRepository $partenaireRepository
+     * @param BaseRepository $baseRepository
      * @return Response
+     * @Route("/offres", name="offres")
      */
-    #[Route('/offres', name: 'offres')]
     public function offres(OffreRepository $offreRepository,PartenaireRepository $partenaireRepository,BaseRepository $baseRepository): Response
     {
         $offres = $offreRepository->findAll();
