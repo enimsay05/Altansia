@@ -2,64 +2,45 @@
 
 namespace App\Entity;
 
-use App\Repository\OffreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: OffreRepository::class)]
+/**
+ * Offre
+ *
+ * @ORM\Table(name="offre")
+ * @ORM\Entity
+ */
 class Offre
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
-    #[ORM\Column(length: 250)]
-    private ?string $titre = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=250, nullable=false)
+     */
+    private $titre;
 
-    #[ORM\Column(length: 3000)]
-    private ?string $text = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="string", length=3000, nullable=false)
+     */
+    private $text;
 
-    #[ORM\Column(length: 250, nullable: true)]
-    private ?string $email = null;
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="email", type="string", length=250, nullable=true)
+     */
+    private $email;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
-    public function getTitre(): ?string
-    {
-        return $this->titre;
-    }
-
-    public function setTitre(string $titre): self
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    public function getText(): ?string
-    {
-        return $this->text;
-    }
-
-    public function setText(string $text): self
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(?string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
 }

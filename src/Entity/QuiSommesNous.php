@@ -2,94 +2,59 @@
 
 namespace App\Entity;
 
-use App\Repository\QuiSommesNousRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: QuiSommesNousRepository::class)]
+/**
+ * QuiSommesNous
+ *
+ * @ORM\Table(name="qui_sommes_nous")
+ * @ORM\Entity
+ */
 class QuiSommesNous
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
-    #[ORM\Column(length: 250)]
-    private ?string $section = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="section", type="string", length=250, nullable=false)
+     */
+    private $section;
 
-    #[ORM\Column(length: 250, nullable: true)]
-    private ?string $image = null;
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="image", type="string", length=250, nullable=true)
+     */
+    private $image;
 
-    #[ORM\Column(length: 1000)]
-    private ?string $text = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="string", length=1000, nullable=false)
+     */
+    private $text;
 
-    #[ORM\Column(length: 250, nullable: true)]
-    private ?string $titre = null;
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="titre", type="string", length=250, nullable=true)
+     */
+    private $titre;
 
-    #[ORM\Column(length: 250, nullable: true)]
-    private ?string $libelle = null;
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="libelle", type="string", length=250, nullable=true)
+     */
+    private $libelle;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
-    public function getSection(): ?string
-    {
-        return $this->section;
-    }
-
-    public function setSection(string $section): self
-    {
-        $this->section = $section;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    public function getText(): ?string
-    {
-        return $this->text;
-    }
-
-    public function setText(string $text): self
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    public function getTitre(): ?string
-    {
-        return $this->titre;
-    }
-
-    public function setTitre(?string $titre): self
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    public function getLibelle(): ?string
-    {
-        return $this->libelle;
-    }
-
-    public function setLibelle(?string $libelle): self
-    {
-        $this->libelle = $libelle;
-
-        return $this;
-    }
 }

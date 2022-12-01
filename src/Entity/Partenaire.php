@@ -2,34 +2,31 @@
 
 namespace App\Entity;
 
-use App\Repository\PartenaireRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PartenaireRepository::class)]
+/**
+ * Partenaire
+ *
+ * @ORM\Table(name="partenaire")
+ * @ORM\Entity
+ */
 class Partenaire
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
-    #[ORM\Column(length: 250)]
-    private ?string $image = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=250, nullable=false)
+     */
+    private $image;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 }
