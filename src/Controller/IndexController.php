@@ -106,11 +106,11 @@ class IndexController extends AbstractController
      * @return Response
      *  @Route("/clients", name="clients")
      */
-    public function clients(ClientRepository $clientRepository): Response
+    public function clients(ClientRepository $clientRepository,BaseRepository $baseRepository): Response
     {
         $clients = $clientRepository->findAll();
         $clientel = array();
-        $base= $this->base();
+        $base= $this->base($baseRepository->findAll());
         $titre = "";
         $titreSection2="";
         $titreSection3="";
