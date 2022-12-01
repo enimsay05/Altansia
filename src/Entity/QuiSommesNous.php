@@ -151,6 +151,5 @@ class QuiSommesNous
     {
         $this->libelle = $libelle;
     }
-
     
 }
