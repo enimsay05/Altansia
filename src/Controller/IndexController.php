@@ -55,6 +55,7 @@ class IndexController extends AbstractController
 
         $actualites = $actualiteRepository->findAll();
         $data = array();
+         $base= $this->base($baseRepository->findAll());
         foreach ($actualites as $key => $actualite) {
             $data[$key] = [
                 "section" => $actualite->getSection(),
@@ -73,7 +74,7 @@ class IndexController extends AbstractController
             ];
         }
 
-        return $this->render('index.html.twig',array("data"=>$data,"partenaire"=>$partenaria));
+        return $this->render('index.html.twig',array("data"=>$data,"partenaire"=>$partenaria,"base"=>$base));
     }
 
     /**
