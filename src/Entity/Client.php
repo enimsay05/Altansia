@@ -49,5 +49,86 @@ class Client
      */
     private $titre;
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSection(): string
+    {
+        return $this->section;
+    }
+
+    /**
+     * @param string $section
+     */
+    public function setSection(string $section): void
+    {
+        $this->section = $section;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string|null $image
+     */
+    public function setImage(?string $image): void
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    /**
+     * @param string|null $text
+     */
+    public function setText(?string $text): void
+    {
+        $this->text = $text;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    /**
+     * @param string|null $titre
+     */
+    public function setTitre(?string $titre): void
+    {
+        $this->titre = $titre;
+    }
+
+
 
 }
